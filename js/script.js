@@ -23,7 +23,9 @@ $(document).ready(function () {
       });
     }
   }
-  mobileDropdown();
+  $('.header-bottom__menu-link').on('click', function () {
+    mobileDropdown();
+  });
   $(window).on('resize', function () {
     mobileDropdown();
   });
