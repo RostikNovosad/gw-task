@@ -8,17 +8,19 @@ $(document).ready(function () {
     $('body').removeClass('burger-open');
   });
 
-  if (window.innerWidth < 769) {
-    $('.header-bottom__menu-link').on('click', function () {
-      $('.dropdown').toggleClass('active');
-    });
-    $('.dropdown__menu-item.first').on('click', function () {
-      $('.dropdown__submenu-1').toggleClass('active');
-      $('.dropdown__submenu-2').removeClass('active');
-    });
-    $('.dropdown__menu-item.second').on('click', function () {
-      $('.dropdown__submenu-2').toggleClass('active');
-      $('.dropdown__submenu-1').removeClass('active');
-    });
-  }
+  $(window).on('resize', function () {
+    if (window.innerWidth < 769) {
+      $('.header-bottom__menu-link').on('click', function () {
+        $('.dropdown').toggleClass('active');
+      });
+      $('.dropdown__menu-item.first').on('click', function () {
+        $('.dropdown__submenu-1').toggleClass('active');
+        $('.dropdown__submenu-2').removeClass('active');
+      });
+      $('.dropdown__menu-item.second').on('click', function () {
+        $('.dropdown__submenu-2').toggleClass('active');
+        $('.dropdown__submenu-1').removeClass('active');
+      });
+    }
+  });
 });
