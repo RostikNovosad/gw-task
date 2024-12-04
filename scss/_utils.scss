@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+}
+body.burger-open {
+  overflow: hidden;
+}
+a {
+  text-decoration: none;
+}
+
+.content {
+  max-width: 1240px;
+  display: block;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 992px) {
+  .content {
+    padding: 0 20px;
+  }
+}
+
+.logo {
+  font-weight: 400;
+  font-size: 32px;
+  text-align: center;
+  color: var(--black-color);
+}

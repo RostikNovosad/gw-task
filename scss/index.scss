@@ -1,0 +1,20 @@
+@import './utils';
+@import './variables';
+
+// components
+@import './component/product-card';
+@import './component/button';
+@import './component/burger';
+
+// layouts
+@import './layout/header';
+@import './layout/banner';
+@import './layout/sale';
+@import './layout/catalog';
+@import './layout/news';
+@import './layout/category';
+@import './layout/blog';
+@import './layout/media';
+@import './layout/footer';
+
+@import './component/dropdown-menu';

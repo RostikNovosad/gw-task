@@ -1,0 +1,153 @@
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.header-top {
+  &__block {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+
+    @media (max-width: 768px) {
+      gap: 16px;
+    }
+  }
+
+  &__link {
+    color: var(--header-top-link);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 240%;
+    text-align: center;
+  }
+
+  @media (max-width: 576px) {
+    display: none;
+  }
+}
+
+.header-center {
+  padding: 12px 0;
+  border-top: 1px solid var(--header-center-border);
+  border-bottom: 1px solid var(--header-center-border);
+
+  @media (max-width: 576px) {
+    margin-top: 36px;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+
+    @media (max-width: 576px) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__left {
+    display: flex;
+    gap: 20px;
+
+    @media (max-width: 576px) {
+      display: none;
+    }
+  }
+  &__lang-group {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  &__lang {
+    font-family: var(--font-roboto);
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 214%;
+    color: var(--black-color);
+  }
+  &__lang.active {
+    font-size: 16px;
+    line-height: 147%;
+  }
+
+  &__right {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+  }
+
+  &__search {
+    position: relative;
+  }
+
+  &__input {
+    background: var(--search-input-bg);
+    width: 296px;
+    height: 38px;
+    border: none;
+    outline: none;
+
+    @media (max-width: 1280px) {
+      width: 246px;
+    }
+    @media (max-width: 992px) {
+      width: 150px;
+    }
+    @media (max-width: 768px) {
+      width: 48px;
+    }
+    @media (max-width: 576px) {
+      display: none;
+    }
+
+    &-icon {
+      position: absolute;
+      right: 13px;
+      top: 8px;
+
+      @media (max-width: 576px) {
+        display: none;
+      }
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  &__burger {
+    display: none;
+
+    @media (max-width: 576px) {
+      display: block;
+    }
+  }
+}
+
+.header-bottom {
+  &__menu {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    position: relative;
+
+    @media (max-width: 576px) {
+      gap: 16px;
+    }
+
+    &-link {
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--header-bottom-link);
+      padding-bottom: 13px;
+
+      &:hover ~ .dropdown {
+        display: block;
+      }
+    }
+  }
+}
