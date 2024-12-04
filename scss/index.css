@@ -352,8 +352,10 @@ header {
   color: var(--header-bottom-link);
   padding-bottom: 13px;
 }
-.header-bottom__menu-link:hover ~ .dropdown {
-  display: block;
+@media (min-width: 769px) {
+  .header-bottom__menu-link:hover ~ .dropdown {
+    display: block;
+  }
 }
 
 .banner__block {
@@ -835,11 +837,24 @@ header {
   position: absolute;
   top: 15px;
   display: none;
-  min-width: 455px;
   height: 288px;
 }
-.dropdown:hover {
-  display: block;
+.dropdown.active {
+  display: flex;
+}
+@media (min-width: 769px) {
+  .dropdown {
+    min-width: 455px;
+  }
+  .dropdown:hover {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .dropdown {
+    min-width: none;
+    height: auto;
+  }
 }
 .dropdown__wrapper {
   display: flex;
@@ -860,8 +875,19 @@ header {
   gap: 15px;
   padding-left: 20px;
 }
-.dropdown__submenu-1:hover, .dropdown__submenu-2:hover {
+.dropdown__submenu-1.active, .dropdown__submenu-2.active {
   display: flex;
+}
+@media (min-width: 769px) {
+  .dropdown__submenu-1:hover, .dropdown__submenu-2:hover {
+    display: flex;
+  }
+}
+@media (max-width: 768px) {
+  .dropdown__submenu-1, .dropdown__submenu-2 {
+    position: static;
+    padding-left: 0px;
+  }
 }
 .dropdown__menu {
   display: flex;
@@ -871,6 +897,11 @@ header {
   order: 1;
   height: 100%;
   border-right: 1px solid var(--dropdown-line);
+}
+@media (max-width: 768px) {
+  .dropdown__menu {
+    border-right: none;
+  }
 }
 .dropdown__menu-list {
   display: flex;
@@ -882,11 +913,22 @@ header {
   align-items: center;
   padding-right: 20px;
 }
-
-.dropdown__menu-item.first:hover ~ .dropdown__submenu-1 {
-  display: flex;
+@media (max-width: 768px) {
+  .dropdown__menu-item {
+    padding-right: 0px;
+  }
+}
+@media (max-width: 768px) {
+  .dropdown__menu-item-icon {
+    transform: rotate(90deg);
+  }
 }
 
-.dropdown__menu-item.second:hover ~ .dropdown__submenu-2 {
-  display: flex;
+@media (min-width: 769px) {
+  .dropdown__menu-item.first:hover ~ .dropdown__submenu-1 {
+    display: flex;
+  }
+  .dropdown__menu-item.second:hover ~ .dropdown__submenu-2 {
+    display: flex;
+  }
 }/*# sourceMappingURL=index.css.map */

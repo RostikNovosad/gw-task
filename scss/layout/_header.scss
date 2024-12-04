@@ -144,9 +144,10 @@ header {
       font-size: 14px;
       color: var(--header-bottom-link);
       padding-bottom: 13px;
-
-      &:hover ~ .dropdown {
-        display: block;
+      @media (min-width: 769px) {
+        &:hover ~ .dropdown {
+          display: block;
+        }
       }
     }
   }
