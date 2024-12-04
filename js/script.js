@@ -23,9 +23,7 @@ $(document).ready(function () {
       });
     }
   }
-  $('.header-bottom__menu-link').on('click', function () {
-    mobileDropdown();
-  });
+  mobileDropdown();
   $(window).on('resize', function () {
     mobileDropdown();
   });
