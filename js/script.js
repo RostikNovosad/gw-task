@@ -8,7 +8,7 @@ $(document).ready(function () {
     $('body').removeClass('burger-open');
   });
 
-  $(window).on('resize', function () {
+  function mobileDropdown() {
     if (window.innerWidth < 769) {
       $('.header-bottom__menu-link').on('click', function () {
         $('.dropdown').toggleClass('active');
@@ -22,5 +22,9 @@ $(document).ready(function () {
         $('.dropdown__submenu-1').removeClass('active');
       });
     }
+  }
+  mobileDropdown();
+  $(window).on('resize', function () {
+    mobileDropdown();
   });
 });
